@@ -7,6 +7,7 @@ import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import morgan from "morgan";
 import adminRoutes from "./routes/admin_Actions.routes.js";
+import usermanagmentRoutes from "./routes/user_managment.routes.js";
 
 // Load .env config
 dotenv.config();
@@ -42,6 +43,7 @@ app.use(
 
 // Routes
 app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1/user", usermanagmentRoutes);
 
 // MongoDB Connection and Server Start
 const port = process.env.PORT || 5000;
